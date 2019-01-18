@@ -1,0 +1,60 @@
+export const menu=[{
+    name:'Home',
+    key:'Home',
+    path:'/'
+},{
+    name:'React',
+    key:'React',
+    path:'',
+    children:[{
+        name:'antd-design',
+        key:'antd-design',
+        path:'',
+    },{
+        name:'react-spring',
+        key:'react-spring',
+        path:'',
+    },{
+        name:'redux',
+        key:'redux',
+        path:'',
+    }]
+},{
+    name:'Vue',
+    key:'Vue',
+    path:'',
+    children:[{
+        name:'element-ui',
+        key:'element-ui',
+        path:'',
+    },{
+        name:'vue-router',
+        key:'vue-router',
+        path:'',
+    }]
+},{
+    name:'angular',
+    key:'angular',
+    path:'',
+},{
+    name:'other',
+    key:'other',
+    path:'',
+    children:[{
+        name:'axios',
+        key:'axios',
+        path:'',
+    },{
+        name:'query-string',
+        key:'query-string',
+        path:'',
+    },{
+        name:'loadsh',
+        key:'loadsh',
+        path:'',
+    },{
+        name:'less',
+        key:'less',
+        path:'',
+    }]
+}]
