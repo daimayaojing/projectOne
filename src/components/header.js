@@ -21,7 +21,7 @@ class Header extends Component {
     const { children } = this.props;
     return (
       <div className={style['header-box']}>
-      <div className="container">
+      <div className="header-container">
         <div className={style['header-logo']}>前端语言整理系统<img src={headerIcon}/></div>
           <div className={style['header-popover']}>
               {menu.map((item, index) => {

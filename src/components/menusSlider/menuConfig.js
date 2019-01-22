@@ -3,7 +3,6 @@ export default {
       dataSourse: [
         {
           key: 'homePage',
-          // Icon: 'user',
           value: 'home',
           path: '/'
         }

@@ -34,12 +34,12 @@ const menuSlider = ComposedComponent => {
         let menuTy = menuSourse.map(item => {
           if (item.SubMenu) {
             return (
-              <SubMenu key={item.key} title={<span>{item.value}</span>}>
+              <SubMenu key={item.key.toString()} title={<span>{item.value}</span>}>
                 {this.ItemMemu(item.SubMenu)}
               </SubMenu>
             );
           }
-          return <Menu.Item key={item.key}>{item.value}</Menu.Item>;
+          return <Menu.Item key={item.key.toString()}>{item.value}</Menu.Item>;
         });
         return menuTy;
       };
@@ -47,34 +47,30 @@ const menuSlider = ComposedComponent => {
       render() {
         let config = typeof menuType === 'string' ? menuConfig[menuType] : menuType(this.props);
         let menuSourse = config.dataSourse;
-        const defaultOpenKeys = config.defaultOpenKeys;
         const active = this.findMenu(this.props.location, menuSourse);
 
         if (
-            !menuType ||
-            (typeof menuType === 'string' && !menuConfig[menuType]) ||
-            (typeof menuType !== 'string' && typeof menuType !== 'function')
-          ) {
-            console.error('当前菜单类型不存在');
-            return <div>当前菜单类型不存在</div>;
-          }
+          !menuType ||
+          (typeof menuType === 'string' && !menuConfig[menuType]) ||
+          (typeof menuType !== 'string' && typeof menuType !== 'function')
+        ) {
+          console.error('当前菜单类型不存在');
+          return <div>当前菜单类型不存在</div>;
+        }
 
         return (
-          <Layout className={styles.menuSlider}>
+          <Layout className={styles['menuSlider']}>
             <Sider>
               <Menu
                 mode="inline"
-                defaultOpenKeys={defaultOpenKeys}
-                defaultSelectedKeys={active ? [active.key] : ''}
+                defaultSelectedKeys={active && [active.key].toString()}
               >
                 {this.ItemMemu(menuSourse)}
               </Menu>
             </Sider>
-            <Layout>
-              <Content>
-                <ComposedComponent {...this.props} />
-              </Content>
-            </Layout>
+            <div className={styles['right-contanier']}>
+              <ComposedComponent {...this.props} />
+            </div>
           </Layout>
         );
       }

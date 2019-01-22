@@ -8,8 +8,11 @@ body,
 }
 #root .container {
     min-height: 100%;
+    margin-top:42px;
+    margin-bottom:108px;
+    padding-bottom:20px;
   }
-.container{
+.container, .header-container{
   width: 1240px;
   margin: auto;
 }

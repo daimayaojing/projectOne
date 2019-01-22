@@ -1,0 +1,39 @@
+
+.home-box{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    .chart-one,.chart-two,.chart-three,.chart-four,.chart-five{
+      background: #fff;
+      padding:10px;
+    }
+   .chart-one,.chart-two,.chart-three{
+     width:330px;
+   }
+   .chart-four,.chart-five{
+     width: 500px;
+     margin-top:10px;
+   }
+   .chart-two,.chart-three,.chart-five{
+     margin-left: 10px;
+   }
+   .chart-three{
+     :global{
+        .antd-pro-charts-radar-legend{
+          display: flex;
+          flex-direction: row;
+        }
+        .ant-card-body{
+          padding: 0px !important;
+        }
+     }
+   }
+   :global{
+    .antd-pro-charts-pie-total{
+      font-size: 14px;
+      text-align: center;
+    }
+   
+   }
+  }
+  
